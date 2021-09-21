@@ -9,8 +9,9 @@ export const AllImages = () => {
   useEffect(() => {
     dispatch(getImages());
   }, []);
+
   return (
-    <div>
+    <div className="content">
        {images && images.length
         ? images.map((image) => {
             return <img src={image.URL} key={image.URL} />;
