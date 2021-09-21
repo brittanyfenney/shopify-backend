@@ -3,14 +3,15 @@ import { useDispatch } from "react-redux";
 import { addImage } from "../store";
 
 export const AddImage = () => {
-  const [url, setUrl] = useState('')
+  const [URL, setURL] = useState('')
   const dispatch = useDispatch()
 
   const handleSubmit = e => {
     e.preventDefault()
     const data = {
-      url
+      URL
     }
+    console.log('submitting ===> ',data)
     dispatch(addImage(data))
   }
 
@@ -22,8 +23,8 @@ export const AddImage = () => {
          <input type="url"
          placeholder="Please enter image URL."
          name="url"
-         value={url}
-         onChange={e => setUrl(e.target.value)}
+         value={URL}
+         onChange={e => setURL(e.target.value)}
          />
          <br />
          <button type="submit">Submit</button>

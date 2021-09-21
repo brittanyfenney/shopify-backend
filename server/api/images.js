@@ -14,9 +14,14 @@ router.get('/', async (req, res, next) => {
 })
 
 // POST /api/images
-router.post('/', function (req, res, next) {
+router.post('/', async (req, res, next) => {
   try {
-    res.send('hi!')
+    const newImage = await Image.create(req.body)
+    if (newImage.id) {
+      res.sendStatus(201)
+    } else {
+      res.sendStatus(500)
+    }
   } catch (error) {
     next(error)
   }

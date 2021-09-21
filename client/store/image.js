@@ -16,7 +16,7 @@ export const getImages = () => async dispatch => {
 }
 
 export const addImage = url => async dispatch => {
-  const response = await axios.post('/api/images')
+  const response = await axios.post('/api/images', url)
   console.log(response)
 
 }

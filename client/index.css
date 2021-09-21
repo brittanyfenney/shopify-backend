@@ -24,10 +24,13 @@ a {
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .content img {
-  margin: 20px
+  margin: 20px;
+  width: auto;
+  height: 300px;
 }
 
 .form {
