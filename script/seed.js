@@ -2,7 +2,7 @@
 
 const {
   db,
-  models: { User },
+  models: { User, Image },
 } = require("../server/db");
 
 async function seed() {
@@ -16,10 +16,22 @@ async function seed() {
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded successfully`);
+
+  const images = await Promise.all([
+    Image.create({ URL: "https://picsum.photos/seed/picsum/200/300" }),
+    Image.create({ URL: "https://picsum.photos/seed/picsum/200/300" }),
+  ]);
+
+  console.log(`seeded ${images.length} images`);
+  console.log(`seeded successfully`);
   return {
     users: {
       john: users[0],
       jane: users[1],
+    },
+    images: {
+      one: images[0],
+      two: images[1],
     },
   };
 }
