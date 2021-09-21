@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { addImage } from "../store";
+import { useHistory } from "react-router";
 
-export const AddImage = () => {
+export const AddImage = (props) => {
   const [URL, setURL] = useState('')
   const dispatch = useDispatch()
+  const history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -13,6 +15,7 @@ export const AddImage = () => {
     }
     console.log('submitting ===> ',data)
     dispatch(addImage(data))
+    history.push('/images')
   }
 
   return (

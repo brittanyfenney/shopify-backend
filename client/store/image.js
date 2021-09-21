@@ -17,8 +17,9 @@ export const getImages = () => async dispatch => {
 
 export const addImage = url => async dispatch => {
   const response = await axios.post('/api/images', url)
-  console.log(response)
-
+  if (response.status === 201) {
+    return dispatch(addedImage(url))
+  }
 }
 
 // REDUCER
@@ -26,6 +27,8 @@ export default function(state = {}, action) {
   switch (action.type) {
     case GOT_IMAGES:
       return action.images
+    case ADDED_IMAGE:
+        return [...state, action.image]
     default:
       return state;
   }
