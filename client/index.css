@@ -29,3 +29,9 @@ a {
 .content img {
   margin: 20px
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

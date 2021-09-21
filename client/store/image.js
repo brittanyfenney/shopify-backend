@@ -2,15 +2,23 @@ import axios from 'axios'
 
 // ACTION TYPES
 const GOT_IMAGES = 'GOT_IMAGES'
+const ADDED_IMAGE = 'ADDED_IMAGE'
 
 // ACTION CREATORS
 const gotImages = images => ({type: GOT_IMAGES, images})
+const addedImage = image => ({type: ADDED_IMAGE, image})
 
 // THUNK CREATORS
 export const getImages = () => async dispatch => {
   const response = await axios.get('/api/images')
   const images = response.data
   return dispatch(gotImages(images))
+}
+
+export const addImage = url => async dispatch => {
+  const response = await axios.post('/api/images')
+  console.log(response)
+
 }
 
 // REDUCER
