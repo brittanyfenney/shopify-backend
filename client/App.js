@@ -1,16 +1,13 @@
-import React from 'react'
-
-// import Navbar from './components/Navbar'
-// import Routes from './Routes'
+import React from "react";
+import { Navbar } from './components'
+import Routes from './Routes'
 
 export const App = () => {
+
   return (
     <div>
-      <p>Hi</p>
-      {/* <Navbar />
-      <Routes /> */}
+      <Navbar />
+      <Routes />
     </div>
-  )
-}
-
-
+  );
+};

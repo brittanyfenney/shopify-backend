@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 
-function Home(props) {
+export const Home = () => {
+
   return (
     <div>
-      In React Router v4, you get the history object from props. <br />
-      <button type="button" onClick={() => props.history.goBack()}>
-        Go back
-      </button>
+       <p>Welcome to the image repository! Pleae click 'Images' to view all images.</p>
     </div>
   );
 }
 
-export default Home
