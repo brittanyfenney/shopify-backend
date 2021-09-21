@@ -1,5 +1,5 @@
 module.exports = {
-  entry: [
+  entry: ['babel-polyfill',
     './client/index.js'
   ],
   output: {
@@ -16,7 +16,8 @@ module.exports = {
         options: {
           presets: [
             '@babel/preset-react'
-          ]
+          ],
+          plugins: ['@babel/transform-runtime']
         }
       },
       {
