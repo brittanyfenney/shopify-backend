@@ -15,6 +15,9 @@ const Routes = () => {
         <Route path="/add">
           <AddImage />
         </Route>
+        <Route path="/">
+          <Home />
+        </Route>
       </Switch>
     </div>
   );
