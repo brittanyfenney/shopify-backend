@@ -11,5 +11,7 @@ To use the deployed version, click 'Images' to view all images, or 'Add Image' t
 To view the project locally, first clone the repository.
 
 Install dependencies: `npm install`
+
 Run the tests: `npm test`
+
 Run it locally: `npm start`
