@@ -18,28 +18,10 @@ router.post('/', async (req, res, next) => {
   try {
     const newImage = await Image.create(req.body)
     if (newImage.id) {
-      res.sendStatus(201)
+      res.status(201).send(newImage)
     } else {
       res.sendStatus(500)
     }
-  } catch (error) {
-    next(error)
-  }
-})
-
-// PUT /api/images/:imageId
-router.put('/:imageId', function (req, res, next) {
-  try {
-    res.send('hi!')
-  } catch (error) {
-    next(error)
-  }
-})
-
-// DELETE /api/images/:imageId
-router.delete('/:imageId', function (req, res, next) {
-  try {
-    res.send('hi!')
   } catch (error) {
     next(error)
   }

@@ -13,7 +13,6 @@ export const AddImage = (props) => {
     const data = {
       URL,
     };
-    console.log("submitting ===> ", data);
     dispatch(addImage(data));
     history.push("/images");
   };
